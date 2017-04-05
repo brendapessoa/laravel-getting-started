@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
+    @if(Session::has('info'))
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+                <p>{{ Session::get('info') }}</p>
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="row">
         <div class="col-md-12">
             <a href="{{ route('admin.create') }}" class="btn btn-success">New Post</a>
